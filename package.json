@@ -23,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/StephonAutery/puppy-love/issues"
   },
-  "homepage": "https://github.com/StephonAutery/puppy-love#readme"
+  "homepage": "https://github.com/StephonAutery/puppy-love#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.3",
+    "mysql": "^2.18.1"
+  }
 }
