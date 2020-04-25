@@ -1,0 +1,27 @@
+{
+  "name": "puppy-love",
+  "version": "1.0.0",
+  "description": "puppy adoption for everyone",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephonAutery/puppy-love.git"
+  },
+  "keywords": [
+    "puppy",
+    "love",
+    "stephon",
+    "autery",
+    "stephon",
+    "autery"
+  ],
+  "author": "Stephon Autery",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StephonAutery/puppy-love/issues"
+  },
+  "homepage": "https://github.com/StephonAutery/puppy-love#readme"
+}
