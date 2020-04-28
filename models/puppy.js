@@ -11,9 +11,12 @@ var puppy = {
         orm.insertOne("puppies", cols, vals, function(res){
             cb(res);
         });
+    },
+    update: function(objColVals, condition, cb){
+        orm.update("puppies", objColVals, condition, function(res){
+            cb(res);
+        })
     }
 }
-
-
 
 module.exports = puppy;

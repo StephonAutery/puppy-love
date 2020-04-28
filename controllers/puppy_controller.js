@@ -34,5 +34,22 @@ router.post("/api/puppies", function (req, res) {
     res.json({ id: results.insertId });
   });
 });
-//router.put
+
+router.put("api/puppies/:id", function(req,res){
+  var condition = "id= " + req.params.id;
+  console.log("condition", condition);
+  puppy.update({
+    adopted: req.body.adopted
+  }, condition, function(result){
+    if (result.changedRows == 0){
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
+// puppy.update
+
+
+router.put
 module.exports = router;
