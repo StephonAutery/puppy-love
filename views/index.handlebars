@@ -1,0 +1,38 @@
+<h1>puppies!</h1>
+
+<h2>adopted puppies!</h2>
+
+<ul>
+  {{#each puppy}}
+    {{#unless adopted}}
+      {{> puppy/puppy-block adopted=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>puppies waiting!</h2>
+
+<ul>
+  {{#each puppy}}
+    {{#if adopted}}
+      {{> puppy/puppy-block adopted=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<hr>
+<h2>add a puppy</h2>
+<form id="addpuppy">
+
+  <div class="form-group">
+    <label for="puppy">Puppy Name:</label>
+    <input type="text" id="puppy" name="puppy">
+  </div>
+  <div class="form-group">
+    <label for="adopted">adopted?</label><br>
+    <input type="radio" name="adopted" value="1" checked> waiting!<br>
+    <input type="radio" name="adopted" value="0"> adopted
+  </div>
+
+  <button type="submit" id="submitBtn">add puppy!</button>
+</form>
