@@ -3,14 +3,11 @@ $(function() {
     $("#addpuppy").on("submit", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
-    
         var newPuppy = {
           name: $("#puppy").val(),
           adopted: $("[name=adopted]:checked").val()
         }
-    
         console.log(newPuppy);
-    
         // Send the POST request.
         $.ajax("/api/puppies", {
           type: "POST",
@@ -23,5 +20,5 @@ $(function() {
           }
         );
       });
-})
+});
   
