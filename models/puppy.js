@@ -2,21 +2,29 @@
 var orm = require("../config/orm.js");
 
 var puppy = {
-    all: function(cb){
-        orm.selectAll("puppies", function(res){
+    all: function (cb) {
+        orm.selectAll("puppies", function (res) {
             cb(res);
         });
     },
-    create: function(cols, vals, cb){
-        orm.insertOne("puppies", cols, vals, function(res){
+
+    create: function (cols, vals, cb) {
+        orm.insertOne("puppies", cols, vals, function (res) {
             cb(res);
         });
     },
-    update: function(objColVals, condition, cb){
-        orm.update("puppies", objColVals, condition, function(res){
+
+    update: function (objColVals, condition, cb) {
+        orm.updateOne("puppies", objColVals, condition, function (res) {
             cb(res);
-        })
+        });
+    },
+
+    delete: function (condition, cb) {
+        orm.deleteOne("puppies", condition, function (res) {
+            cb(res);
+        });
     }
-}
+};
 
 module.exports = puppy;

@@ -5,28 +5,21 @@ var router = express.Router();
 // input connection puppies database connection object
 var puppy = require("../models/puppy.js");
 
-// middleware specific to this router
-router.use(function timeLog(req, res, next) {
-  console.log(new Date().toLocaleDateString('en-US'))
-  next();
-})
-
 // create all routes useing express router method
 // get routes
 router.get("/", function (req, res) {
-  console.log("you made it - in.");
+  console.log("you made it - /");
   puppy.all(function (data) {
     var hbsObject = {
       puppy: data
     }
-    console.log(hbsObject);
+    // console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
 // insert a new puppie
 router.post("/api/puppies", function (req, res) {
-  console.log(req.body);
   puppy.create(
     ["p_name", "adopted"], [
     req.body.name, req.body.adopted
@@ -35,9 +28,12 @@ router.post("/api/puppies", function (req, res) {
   });
 });
 
-router.put("api/puppies/:id", function(req,res){
+router.put("/api/puppies/:id", function(req,res){
   var condition = "id= " + req.params.id;
-  console.log("condition", condition);
+
+  console.log("you made it - /api.puppies/:id");
+  console.log("condition " + condition);
+
   puppy.update({
     adopted: req.body.adopted
   }, condition, function(result){
@@ -48,8 +44,18 @@ router.put("api/puppies/:id", function(req,res){
     }
   });
 });
-// puppy.update
 
+router.delete("/api/puppies/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
 
-router.put
+  puppy.delete(condition, function(result) {
+    if (result.affectedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
+
 module.exports = router;

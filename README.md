@@ -3,7 +3,7 @@
 
 
  ## description 
- This application is a puppy adoption tracker utilizing MySQL, Node, Express, Handlebars and a homemade ORM. The app utilizes MVC design patterns: Node.JS and MySQL are used to query and route data in the app, and Handlebars generates HTML.
+ This application is a puppy adoption tracker utilizing MySQL, Node, Express, Handlebars and a homemade ORM. The app utilizes MVC design patterns: Node.JS and MySQL are used to query and route data in the app and Handlebars generates HTML.
 
  ## contents 
  - JavaScript 
@@ -14,13 +14,24 @@
 
  ## installation documentation 
  dependencies: 
+ - clone the repository
  - install npm MySQL module
  - npm install Express module 
  - npm install Handlebars module
+ - run 'node server.js'
 
  ## how will the app be used? 
   
  As a puppy rescue and adoption organization, I need to track the puppie that I rescue from bad situations. I need to know how many puppies are waiting to be adopted, how many are adopted and how many have found forever homes.  
+
+  ## code snippets?
+
+  ## learning points.
+
+  ## screenshot?
+   
+  ## live app: 
+ [puppy love - on Heroku]( https://limitless-river-84989.herokuapp.com/) 
 
  ## GitHub repository 
  [puppy love -  on GitHub](https://github.com/StephonAutery/puppy-love) 

@@ -2,6 +2,8 @@
 	{{p_name}}
 
 	<button class="change-adopted" data-id="{{id}}" data-newadopted="{{adopted}}">
-		{{#if adopted}}adopted!{{else}}waiting!{{/if}}
+		{{#if adopted}}wait.{{else}}adopt!{{/if}}
 	</button>
+
+	<button class="delete-puppy" data-id="{{this.id}}">send home!</button>
 </li>
